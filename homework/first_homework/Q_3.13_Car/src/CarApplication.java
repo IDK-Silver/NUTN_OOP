@@ -61,7 +61,7 @@ public class CarApplication {
         Car1.setPrice(Car1.getPrice() * (100 - 5) / 100);
 
         //  and a 7% discount on the price of the second
-        Car2.setPrice(Car1.getPrice() * (100 - 7) / 100);
+        Car2.setPrice(Car2.getPrice() * (100 - 7) / 100);
 
         //  Display each Car’s price again.
         System.out.println();
