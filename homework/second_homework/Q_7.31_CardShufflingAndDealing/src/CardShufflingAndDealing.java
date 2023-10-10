@@ -30,38 +30,7 @@ enum CardContains {
 	Straight,
 	Flush,
 	FullHouse,
-	FourOfKind;
-	
-	static String toStringByEnum(CardContains contain) {
-		switch (contain) {
-			case None:
-				return "None";
-				
-			case Pair:
-				return "Pair";
-				
-			case TwoPair:
-				return "TwoPair";
-				
-			case ThreeOfKind:
-				return "ThreeOfKind";
-				
-			case FourOfKind:
-				return "FourOfKind";
-			
-			case Flush:
-				return "Flush";
-				
-			case Straight:
-				return "Straight";
-				
-			case FullHouse:
-				return "FullHouse";
-				
-			default:
-				return "UNDEFINE";
-		}
-	}
+	FourOfKind
 }
 
 class DeckOfCards {
@@ -189,7 +158,6 @@ class DeckOfCards {
 	
 }
 
-
 public class CardShufflingAndDealing {
 
 	public static void main(String[] args) {
@@ -206,62 +174,30 @@ public class CardShufflingAndDealing {
 			for (int i = 0; i < stackOfCardSize; i++) {
 				Player_1[i] = cards.dealCard();
 				Player_2[i] = cards.dealCard();
-				}
+			}
 			
-				// show card
-				CardContains p1= DeckOfCards.getCardContains(Player_1);
-				System.out.printf("Player 1 : %-10s : ",
-						CardContains.toStringByEnum(p1));
+			// show card
+			CardContains p1= DeckOfCards.getCardContains(Player_1);
+			System.out.printf("Player 1 : %-10s : ", p1);
 				
-				for (int j = 0; j < stackOfCardSize; j++) {
-					System.out.printf("%-19s", Player_1[j]);
-				}
+			for (int j = 0; j < stackOfCardSize; j++) {
+				System.out.printf("%-19s", Player_1[j]);
+			}
 				
-				CardContains p2= DeckOfCards.getCardContains(Player_2);
-				System.out.printf("\nPlayer 2 : %-10s : ",
-						CardContains.toStringByEnum(p2));
+			CardContains p2= DeckOfCards.getCardContains(Player_2);
+			System.out.printf("\nPlayer 2 : %-10s : ", p2);
 				
-				for (int j = 0; j < stackOfCardSize; j++) {
-					System.out.printf("%-19s", Player_2[j]);
-				}
+			for (int j = 0; j < stackOfCardSize; j++) {
+				System.out.printf("%-19s", Player_2[j]);
+			}
 				
-				if (p1.ordinal() == p2.ordinal()) {
-					System.out.println("\nTie\n");
-				}
-				else
-				{
+			if (p1.ordinal() == p2.ordinal()) {
+				System.out.println("\nTie\n");
+			}
+			else {
 					System.out.printf("\nWinner is %s\n\n",
-						(p1.ordinal() > p2.ordinal() ? "Player 1":"Player 2")
-					);
-				}
-				
-				
-			}
-				
-				
-//		Card[] test = { new Card("ACR", "Hearts"),
-//				new Card("ACR", "HeartsS"),
-//				new Card("ACRS", "Hearts"),
-//				new Card("ACRS", "Hearts"),
-//				new Card("ACR", "Hearts")};
-//		
-//				System.out.printf("Test : %s\n", DeckOfCards.getCardContains(test));
-				
-			}
-			
-	
-			
-			
-	}
-		
-		
-
-
-
-
-
-
-
-
-
-
+					(p1.ordinal() > p2.ordinal() ? "Player 1":"Player 2"));
+			}		
+		}
+	}			
+}
