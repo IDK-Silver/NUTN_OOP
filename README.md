@@ -39,7 +39,7 @@
 
       * `Q.md` 題目說明
 
-      * `Q_..._....iml` IDEA 文件
+      * `Q_..._....iml` IntelliJ IDEA 文件
 
 * `README.md` 本文件
 
