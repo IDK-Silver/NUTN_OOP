@@ -15,12 +15,13 @@ public class Warrior extends Role {
 		super(Name, Life, Magic, 10);
 	}
 
-	public void NewMoon(Warrior obj) {
-		this.attack(obj, 40);
-	};
+	public void NewMoon(Role obj) {
+		if (obj.getClass() == Warrior.class) {
+			this.attack(obj, 25);
+		}
+		else {
+			this.attack(obj, 40);
+		}
 
-	public void NewMoon(Witcher obj) {
-		this.attack(obj, 60);
-	};
-
+	}
 }

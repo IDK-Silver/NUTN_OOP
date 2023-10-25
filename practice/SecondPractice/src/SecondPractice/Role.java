@@ -1,10 +1,10 @@
 package SecondPractice;
 
 public class Role {
-    protected String Name;
-    protected int Life;
-    protected int Magic;
-    protected final int constMagic;
+    private String Name;
+    private int Life;
+    private int Magic;
+    private final int constMagic;
 
     public Role(String Name, int Life, int Magic, int constMagic) {
         this.Life = Life;
@@ -30,12 +30,17 @@ public class Role {
 
         this.Magic -= this.constMagic;
 
-        System.out.printf("%s is pk with %s\n", this.Name, obj.getName());
+        System.out.printf("%s is pk with %s : damage is %d\n", this.Name, obj.getName(), damage);
         obj.setLife(obj.getLife() - damage);
 
         if (obj.getLife() <= 0) {
             System.out.printf("%s is dead\n", obj.getName());
             System.exit(0);
         }
+    }
+
+    @Override
+    public String toString() {
+        return this.Name + " " + this.Magic + " " + this.Life;
     }
 }

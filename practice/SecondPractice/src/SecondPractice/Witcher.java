@@ -17,12 +17,14 @@ public class Witcher extends Role {
 	}
 
 	
-	public void SmallFire(Witcher obj) {
-		this.attack(obj, 80);
+	public void SmallFire(Role obj) {
+		if (obj.getClass() == Warrior.class) {
+			this.attack(obj, 40);
+		}
+		else {
+			this.attack(obj, 60);
+		}
 	};
 
-	public void SmallFire(Warrior obj) {
-		this.attack(obj, 40);
-	};
 
 }
