@@ -1,8 +1,8 @@
-package SecondPractice;
-import SecondPractice.Role;
-import SecondPractice.Warrior;
+package Project_Third;
+import Project_Third.Role;
+import Project_Third.Warrior;
 
-public class Witcher extends Role {
+public class Witcher extends Role implements MagicRecoverable{
 
 	public Witcher() {
 		this("undefine");
@@ -26,5 +26,14 @@ public class Witcher extends Role {
 		}
 	};
 
+	@Override
+	public double recoverMagic() {
+		final int recoverTotal = this.getLife() + MAGICRATE;
+		this.setMagic(recoverTotal);
+		return recoverTotal;
+	}
 
 }
+
+
+

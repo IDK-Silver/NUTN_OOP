@@ -1,7 +1,7 @@
-package SecondPractice;
-import SecondPractice.Role;
-import SecondPractice.Witcher;
-public class Warrior extends Role {
+package Project_Third;
+import Project_Third.Role;
+import Project_Third.Witcher;
+public class Warrior extends Role implements LifeRecoverable {
 
 	public Warrior() {
 		this("undefine");
@@ -23,5 +23,12 @@ public class Warrior extends Role {
 			this.attack(obj, 40);
 		}
 
+	}
+
+	@Override
+	public double recoverLife() {
+		final int recoverTotal = this.getLife() + LIFERATE;
+		this.setLife(recoverTotal);
+		return recoverTotal;
 	}
 }
